@@ -9,7 +9,7 @@ Claude Opus 4 | ctx:42% | 5h:[##--------]20% | 7d:[#---------]8% | C:/Users/you/
 ## Install
 
 ```powershell
-irm https://raw.githubusercontent.com/<YOUR_USERNAME>/claude-statusline/main/install.ps1 | iex
+irm https://raw.githubusercontent.com/Sirichai-D/claude-statusline/main/install.ps1 | iex
 ```
 
 Restart Claude Code after running.
