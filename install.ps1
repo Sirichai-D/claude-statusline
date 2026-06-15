@@ -50,8 +50,8 @@ function Format-ResetTime {
     param([long]$unix)
     $t = [DateTimeOffset]::FromUnixTimeSeconds($unix).LocalDateTime
     $diff = $t - [DateTime]::Now
-    if ($diff.TotalMinutes -lt 60) { return "RST$([int]$diff.TotalMinutes)m" }
-    return "RST$([int]$diff.TotalHours)h$($t.ToString('mm'))m"
+    if ($diff.TotalMinutes -lt 60) { return "RST $([int]$diff.TotalMinutes)m" }
+    return "RST $([int]$diff.TotalHours)h$($t.ToString('mm'))m"
 }
 
 $fiveHour = Find-Property $j 'five_hour'
