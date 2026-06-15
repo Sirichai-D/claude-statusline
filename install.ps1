@@ -50,8 +50,8 @@ function Format-ResetTime {
     param([long]$unix)
     $t = [DateTimeOffset]::FromUnixTimeSeconds($unix).LocalDateTime
     $diff = $t - [DateTime]::Now
-    if ($diff.TotalMinutes -lt 60) { return "resets $([int]$diff.TotalMinutes)m" }
-    return "resets $([int]$diff.TotalHours)h$($t.ToString('mm'))m"
+    if ($diff.TotalMinutes -lt 60) { return "RST$([int]$diff.TotalMinutes)m" }
+    return "RST$([int]$diff.TotalHours)h$($t.ToString('mm'))m"
 }
 
 $fiveHour = Find-Property $j 'five_hour'
@@ -99,4 +99,4 @@ Write-Host "Claude Code statusline installed successfully."
 Write-Host "Restart Claude Code to activate."
 Write-Host ""
 Write-Host "Status line will show:"
-Write-Host "  <Model> | ctx:NN% | 5h:[...]NN%(resets Xh) | 7d:[...]NN%(resets Xd) | <current dir>"
+Write-Host "  <Model> | ctx:NN% | 5h:[...]NN%(RSTXh) | 7d:[...]NN%(RSTXd) | <current dir>"
