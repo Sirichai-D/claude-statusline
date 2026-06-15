@@ -58,8 +58,8 @@ $fiveHour = Find-Property $j 'five_hour'
 if ($null -ne $fiveHour) {
     $pct = $fiveHour.used_percentage
     if ($null -ne $pct) {
-        $str = "5h:$(Get-Bar $pct)$([int][Math]::Round($pct))%"
-        if ($fiveHour.resets_at) { $str += "($(Format-ResetTime $fiveHour.resets_at))" }
+        $str = "5h:$([int][Math]::Round($pct))%"
+        if ($fiveHour.resets_at) { $str += " ($(Format-ResetTime $fiveHour.resets_at))" }
         $parts += $str
     }
 }
@@ -68,8 +68,8 @@ $sevenDay = Find-Property $j 'seven_day'
 if ($null -ne $sevenDay) {
     $pct = $sevenDay.used_percentage
     if ($null -ne $pct) {
-        $str = "7d:$(Get-Bar $pct)$([int][Math]::Round($pct))%"
-        if ($sevenDay.resets_at) { $str += "($(Format-ResetTime $sevenDay.resets_at))" }
+        $str = "7d:$([int][Math]::Round($pct))%"
+        if ($sevenDay.resets_at) { $str += " ($(Format-ResetTime $sevenDay.resets_at))" }
         $parts += $str
     }
 }
